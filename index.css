@@ -12,3 +12,51 @@
 html {
   font-family: 'Inter', sans-serif;
 }
+
+body {
+  background-color: #232323;
+}
+
+.container {
+  max-width: 1024px;
+  margin-inline: auto;
+  height: 100dvh;
+  display: grid;
+  place-content: center;
+}
+
+.calculator-container {
+  border: solid 2px rgb(19, 173, 201);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.button {
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 12px;
+  background-color: #4b4b4b;
+  color: #f7f7f7;
+  font-size: large;
+  cursor: default;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.special__button {
+  background-color: #2a2a2a;
+  color: rgb(19, 173, 201);
+  font-weight: 600;
+}
+
+.special__button.ac {
+  grid-column: span 4;
+}
