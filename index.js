@@ -1,24 +1,39 @@
-let firstNumber = null;
+const lastOperation = document.querySelector('.last__operation');
+const currentOperation = document.querySelector('.current__operation');
+
+let firstNumber = '0';
 let operator = null;
-let secondNumber = null;
+let secondNumber = '';
 
 // Operator functions
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => a / b;
+const divide = (a, b) => (b == 0 ? 'Undefined' : a / b);
 
 const operate = (firstNumber, secondNumber, operator) => {
   let operationResult = null;
 
-  if (operator == 'add')
-    return (operationResult = add(firstNumber, secondNumber));
-  if (operator == 'subtract')
-    return (operationResult = subtract(firstNumber, secondNumber));
-  if (operator == 'multiply')
-    return (operationResult = multiply(firstNumber, secondNumber));
-  if (operator == 'divide')
-    return (operationResult = divide(firstNumber, secondNumber));
+  switch (operator) {
+    case 'add':
+      return (operationResult = add(firstNumber, secondNumber));
+      break;
+
+    case 'subtract':
+      return (operationResult = subtract(firstNumber, secondNumber));
+      break;
+
+    case 'multiply':
+      return (operationResult = multiply(firstNumber, secondNumber));
+      break;
+
+    case 'divide':
+      return (operationResult = divide(firstNumber, secondNumber));
+      break;
+
+    default:
+      break;
+  }
 
   return operationResult;
 };
