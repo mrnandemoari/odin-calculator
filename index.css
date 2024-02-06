@@ -28,11 +28,11 @@ body {
 .calculator-container {
   border: solid 4px rgb(19, 173, 201);
   box-shadow: 4px 4px 0 0 rgb(30, 101, 114);
-  min-width: 300px;
   border-radius: 16px;
   padding: 1rem;
   display: grid;
   gap: 1rem;
+  width: 100%;
 }
 
 .display {
@@ -41,15 +41,6 @@ body {
   border-radius: 12px;
   text-align: right;
   color: #232323;
-}
-
-.last__operation {
-  font-size: 1.17rem;
-  color: #4b4b4b;
-  font-weight: 500;
-}
-
-.current__operation {
   font-weight: 600;
   font-size: 2.875rem;
   line-height: 1;
@@ -73,9 +64,10 @@ body {
 }
 
 .operator,
-.comma,
+.decimal,
 .equals,
-.clear {
+.clear,
+.delete {
   background-color: #2a2a2a;
   color: rgb(19, 173, 201);
   font-weight: 600;
@@ -88,21 +80,71 @@ body {
 }
 
 .clear {
-  grid-column: span 4;
+  grid-column: span 2;
+}
+
+.delete {
+  padding: 0.75rem;
+}
+
+.equals {
+  grid-column: span 2;
 }
 
 .digit:hover,
 .operator:hover,
-.comma:hover,
+.decimal:hover,
 .equals:hover,
-.clear:hover {
+.clear:hover,
+.delete:hover {
   opacity: 0.9;
 }
 
 .digit:active,
 .operator:active,
-.comma:active,
+.decimal:active,
 .equals:active,
-.clear:active {
+.clear:active,
+.delete:active {
   opacity: 0.8;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 280px;
+  }
+
+  .calculator-container {
+    min-width: 240px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .container {
+    max-width: 315px;
+  }
+
+  .calculator-container {
+    min-width: 295px;
+  }
+}
+
+@media screen and (min-width: 390px) {
+  .container {
+    max-width: 350px;
+  }
+
+  .calculator-container {
+    min-width: 315px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .container {
+    max-width: 370px;
+  }
+
+  .calculator-container {
+    min-width: 330px;
+  }
 }
